@@ -1,0 +1,189 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+    position: relative;
+    isolation: isolate;
+    overflow-x: hidden;
+    background:
+        radial-gradient(ellipse at 10% 15%, rgba(132, 56, 220, 0.55), transparent 35%),
+        radial-gradient(ellipse at 90% 20%, rgba(20, 180, 200, 0.35), transparent 32%),
+        radial-gradient(ellipse at 75% 90%, rgba(235, 65, 160, 0.38), transparent 35%),
+        radial-gradient(ellipse at 15% 85%, rgba(80, 90, 230, 0.35), transparent 35%),
+        #090b1b;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-image:
+        radial-gradient(2px 2px at 20% 30%, white 70%, transparent),
+        radial-gradient(2px 2px at 75% 15%, white 70%, transparent),
+        radial-gradient(2px 2px at 45% 80%, white 70%, transparent),
+        radial-gradient(2px 2px at 85% 65%, white 70%, transparent),
+        radial-gradient(2px 2px at 10% 70%, white 70%, transparent);
+    background-size: 250px 250px;
+    opacity: 0.45;
+}
+
+
+.container {
+    width: 100%;
+    max-width: 480px;
+    padding: 40px 35px;
+    border-radius: 28px;
+    background: rgba(255, 255, 255, 0.09);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+h1 {
+    text-align: center;
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    text-align: center;
+    margin: 12px auto 28px;
+    color: #c4c5df;
+    font-size: 15px;
+    width: 100%;
+}
+
+.converter {
+    background: rgba(255, 255, 255, 0.09);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    padding: 38px;
+    border-radius: 24px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+    text-align: left;
+}
+
+label {
+    display: block;
+    color: #e5e3f5;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 14px 16px;
+    margin: 8px 0 20px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    font-size: 15px;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+input:focus,
+select:focus {
+    border-color: #a78bfa;
+    box-shadow: 0 0 0 3px rgba(167, 139, 250, 0.2);
+}
+
+select option {
+    background: #17172e;
+    color: #ffffff;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #8b5cf6, #4f46e5, #06b6d4);
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.3);
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(99, 102, 241, 0.45);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+#result {
+    margin-top: 25px;
+    padding: 18px;
+    min-height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 14px;
+    background: rgba(139, 92, 246, 0.15);
+    border: 1px solid rgba(167, 139, 250, 0.3);
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+@media (max-width: 500px) {
+    h1 {
+        font-size: 28px;
+    }
+
+    .converter {
+        padding: 26px 20px;
+    }
+
+    input,
+    select {
+        padding: 14px;
+    }
+}
+
+#result {
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
